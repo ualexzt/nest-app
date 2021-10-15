@@ -16,9 +16,34 @@ module.exports = {
   },
   ignorePatterns: [".eslintrc.js"],
   rules: {
-    "@typescript-eslint/interface-name-prefix": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/dot-notation": "off",
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/explicit-member-accessibility": [
+      "off",
+      {
+        "accessibility": "explicit"
+      }
+    ],
+    "@typescript-eslint/no-inferrable-types": "off",
+    "arrow-parens": [
+      "error",
+      "always",
+      {
+        "requireForBlockBody": true
+      }
+    ],
+    "brace-style": ["off", "off"],
+    "import/order": "off",
+    "max-len": [
+      "error",
+      {
+        "ignorePattern": "^import |^export | implements",
+        "code": 280
+      }
+    ],
+    "no-underscore-dangle": "off",
+    "object-shorthand": "off",
+    "quote-props": ["error", "consistent"],
+    "quotes": ["error", "single"]
   }
 };

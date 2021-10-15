@@ -13,10 +13,7 @@ import { Role } from '../roles/roles.model';
   tableName: 'user_roles',
 })
 export class UserRoles extends Model<UserRoles> {
-  @ApiProperty({
-    example: '1',
-    description: 'Уникальный идентификатор',
-  })
+  @ApiProperty({ example: '1', description: 'Уникальный идентификатор' })
   @Column({
     type: DataType.INTEGER,
     unique: true,
@@ -25,23 +22,13 @@ export class UserRoles extends Model<UserRoles> {
   })
   id: number;
 
-  @ApiProperty({
-    example: '1',
-    description: 'ID пользователя',
-  })
+  @ApiProperty({ example: '1', description: 'ID пользователя' })
   @ForeignKey(() => User)
-  @Column({
-    type: DataType.INTEGER,
-  })
+  @Column({ type: DataType.INTEGER })
   userId: number;
 
-  @ApiProperty({
-    example: '1',
-    description: 'ID роли пользователя',
-  })
+  @ApiProperty({ example: '1', description: 'ID роли пользователя' })
   @ForeignKey(() => Role)
-  @Column({
-    type: DataType.INTEGER,
-  })
+  @Column({ type: DataType.INTEGER })
   roleId: number;
 }
