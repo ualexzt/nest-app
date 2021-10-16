@@ -1,17 +1,11 @@
-import {
-  BelongsToMany,
-  Column,
-  DataType,
-  Model,
-  Table,
-} from 'sequelize-typescript';
-import { ApiProperty } from '@nestjs/swagger';
-import { User } from '../users/user.model';
-import { UserRoles } from '../sharead/user-roles.model';
+import {BelongsToMany, Column, DataType, Model, Table} from 'sequelize-typescript'
+import {ApiProperty} from '@nestjs/swagger'
+import {User} from '../users/user.model'
+import {UserRoles} from '../sharead/user-roles.model'
 
 interface RolesCreationAtr {
-  value: string;
-  description: string;
+  value: string
+  description: string
 }
 
 @Table({
@@ -28,7 +22,7 @@ export class Role extends Model<Role, RolesCreationAtr> {
     autoIncrement: true,
     primaryKey: true,
   })
-  id: number;
+  id: number
 
   @ApiProperty({
     example: 'ADMIN',
@@ -39,7 +33,7 @@ export class Role extends Model<Role, RolesCreationAtr> {
     unique: true,
     allowNull: true,
   })
-  value: string;
+  value: string
 
   @ApiProperty({
     example: 'Администратор сайта',
@@ -49,8 +43,8 @@ export class Role extends Model<Role, RolesCreationAtr> {
     type: DataType.STRING,
     allowNull: true,
   })
-  description: string;
+  description: string
 
   @BelongsToMany(() => User, () => UserRoles)
-  users: User[];
+  users: User[]
 }

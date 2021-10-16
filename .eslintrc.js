@@ -17,7 +17,7 @@ module.exports = {
   ignorePatterns: [".eslintrc.js"],
   rules: {
     "@typescript-eslint/dot-notation": "off",
-    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-member-accessibility": [
       "off",
       {
@@ -38,7 +38,7 @@ module.exports = {
       "error",
       {
         "ignorePattern": "^import |^export | implements",
-        "code": 280
+        "code": 120
       }
     ],
     "no-underscore-dangle": "off",
