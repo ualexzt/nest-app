@@ -18,6 +18,7 @@ module.exports = {
   rules: {
     "@typescript-eslint/dot-notation": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/explicit-member-accessibility": [
       "off",
       {
