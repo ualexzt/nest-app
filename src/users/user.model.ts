@@ -1,31 +1,25 @@
-import {
-  BelongsToMany,
-  Column,
-  DataType,
-  Model,
-  Table,
-} from 'sequelize-typescript';
-import { ApiProperty } from '@nestjs/swagger';
-import { Role } from '../roles/roles.model';
-import { UserRoles } from '../sharead/user-roles.model';
+import {BelongsToMany, Column, DataType, Model, Table} from 'sequelize-typescript'
+import {ApiProperty} from '@nestjs/swagger'
+import {Role} from '../roles/roles.model'
+import {UserRoles} from '../sharead/user-roles.model'
 
 interface UserCreationAtr {
-  email: string;
-  password: string;
+  email: string
+  password: string
 }
 
 @Table({
   tableName: 'users',
 })
 export class User extends Model<User, UserCreationAtr> {
-  @ApiProperty({ example: '1', description: 'Уникальный идентификатор' })
+  @ApiProperty({example: '1', description: 'Уникальный идентификатор'})
   @Column({
     type: DataType.INTEGER,
     unique: true,
     autoIncrement: true,
     primaryKey: true,
   })
-  id: number;
+  id: number
 
   @ApiProperty({
     example: 'user@exp.com',
@@ -36,7 +30,7 @@ export class User extends Model<User, UserCreationAtr> {
     unique: true,
     allowNull: true,
   })
-  email: string;
+  email: string
 
   @ApiProperty({
     example: 'р12Имя34',
@@ -46,7 +40,7 @@ export class User extends Model<User, UserCreationAtr> {
     type: DataType.STRING,
     allowNull: true,
   })
-  password: string;
+  password: string
 
   @ApiProperty({
     example: 'true',
@@ -56,7 +50,7 @@ export class User extends Model<User, UserCreationAtr> {
     type: DataType.BOOLEAN,
     defaultValue: false,
   })
-  banned: boolean;
+  banned: boolean
 
   @ApiProperty({
     example: 'За нарушение правил',
@@ -66,7 +60,8 @@ export class User extends Model<User, UserCreationAtr> {
     type: DataType.STRING,
     allowNull: true,
   })
-  babReason: string;
+  badReason: string
+
   @BelongsToMany(() => Role, () => UserRoles)
-  roles: Role[];
+  roles: Role[]
 }
