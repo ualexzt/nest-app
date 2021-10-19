@@ -60,7 +60,7 @@ export class User extends Model<User, UserCreationAtr> {
     type: DataType.STRING,
     allowNull: true,
   })
-  badReason: string
+  babReason: string
 
   @BelongsToMany(() => Role, () => UserRoles)
   roles: Role[]

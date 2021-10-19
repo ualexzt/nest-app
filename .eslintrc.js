@@ -1,50 +1,53 @@
 module.exports = {
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: "tsconfig.json",
-    sourceType: "module"
+    project: 'tsconfig.json',
+    sourceType: 'module',
   },
-  plugins: ["@typescript-eslint/eslint-plugin"],
-  extends: [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
-  ],
+  plugins: ['@typescript-eslint/eslint-plugin'],
+  extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
   root: true,
   env: {
     node: true,
-    jest: true
+    jest: true,
   },
-  ignorePatterns: [".eslintrc.js"],
+  ignorePatterns: ['.eslintrc.js'],
   rules: {
-    "@typescript-eslint/dot-notation": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/explicit-member-accessibility": [
-      "off",
+    '@typescript-eslint/dot-notation': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/explicit-member-accessibility': [
+      'off',
       {
-        "accessibility": "explicit"
-      }
+        accessibility: 'explicit',
+      },
     ],
-    "@typescript-eslint/no-inferrable-types": "off",
-    "arrow-parens": [
-      "error",
-      "always",
+    '@typescript-eslint/no-inferrable-types': 'off',
+    'arrow-parens': [
+      'error',
+      'always',
       {
-        "requireForBlockBody": true
-      }
+        requireForBlockBody: true,
+      },
     ],
-    "brace-style": ["off", "off"],
-    "import/order": "off",
-    "max-len": [
-      "error",
+    'brace-style': ['off', 'off'],
+    'import/order': 'off',
+    'max-len': [
+      'error',
       {
-        "ignorePattern": "^import |^export | implements",
-        "code": 120
-      }
+        ignorePattern: '^import |^export | implements',
+        code: 120,
+      },
     ],
-    "no-underscore-dangle": "off",
-    "object-shorthand": "off",
-    "quote-props": ["error", "consistent"],
-    "quotes": ["error", "single"]
-  }
-};
+    'no-underscore-dangle': 'off',
+    'object-shorthand': 'off',
+    'quote-props': ['error', 'consistent'],
+    quotes: ['error', 'single'],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
+  },
+}
